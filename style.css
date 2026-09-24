@@ -1,0 +1,834 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #18245c 0%,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #30144f 0%,
+            transparent 30%
+        ),
+        #050713;
+
+    color: #ffffff;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    overflow-x: hidden;
+}
+
+
+/* ========================================= */
+/* GAME CONTAINER */
+/* ========================================= */
+
+.game {
+    position: relative;
+
+    width: 100%;
+    max-width: 430px;
+
+    margin: 0 auto;
+
+    min-height: 650px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ========================================= */
+/* STARS */
+/* ========================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size:
+        90px 90px,
+        150px 150px;
+
+    background-position:
+        20px 30px,
+        70px 100px;
+
+    opacity: 0.25;
+}
+
+
+/* ========================================= */
+/* SCREENS */
+/* ========================================= */
+
+.screen {
+    display: none;
+
+    width: 100%;
+
+    text-align: center;
+
+    padding: 35px 25px;
+
+    animation: fadeIn 0.3s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================= */
+/* HOME BUTTON */
+/* ========================================= */
+
+.home-button {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 1000;
+
+    background: rgba(10, 15, 35, 0.85);
+
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 10px;
+
+    padding: 9px 14px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.home-button:hover {
+    transform: translateY(-2px);
+
+    background: rgba(30, 40, 75, 0.95);
+}
+
+.home-button:active {
+    transform: scale(0.96);
+}
+
+
+/* ========================================= */
+/* HOME */
+/* ========================================= */
+
+.planet {
+    font-size: 70px;
+
+    margin-bottom: 10px;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.logo {
+    font-size: 40px;
+
+    font-weight: 900;
+
+    letter-spacing: 6px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #8fa8ff,
+        #ffffff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    text-shadow:
+        0 0 30px rgba(100, 130, 255, 0.3);
+}
+
+.orbit-line {
+    width: 190px;
+    height: 2px;
+
+    margin: 18px auto;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #7187ff,
+        transparent
+    );
+}
+
+.tagline {
+    color: #aeb7d8;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+
+    font-size: 15px;
+}
+
+
+/* ========================================= */
+/* HEADINGS */
+/* ========================================= */
+
+h2 {
+    font-size: 25px;
+
+    letter-spacing: 2px;
+
+    margin: 15px 0 8px;
+}
+
+.screen-subtitle {
+    color: #929bbd;
+
+    font-size: 14px;
+
+    margin-bottom: 28px;
+}
+
+.section-icon {
+    font-size: 38px;
+
+    margin-bottom: 5px;
+}
+
+.big-icon {
+    font-size: 55px;
+}
+
+
+/* ========================================= */
+/* BUTTONS */
+/* ========================================= */
+
+button {
+    font-family: inherit;
+}
+
+.primary-button {
+    width: 100%;
+
+    padding: 15px 20px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #586cff,
+        #7c4dff
+    );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(70, 80, 255, 0.25);
+
+    transition: 0.2s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(70, 80, 255, 0.35);
+}
+
+.primary-button:active {
+    transform: scale(0.98);
+}
+
+
+/* ========================================= */
+/* SETTINGS */
+/* ========================================= */
+
+.setting {
+    text-align: left;
+
+    margin-bottom: 18px;
+}
+
+.setting label,
+.custom-box label {
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #8e99c4;
+
+    margin-bottom: 8px;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper select {
+    width: 100%;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: rgba(20, 26, 55, 0.85);
+
+    color: #ffffff;
+
+    border: 1px solid rgba(130, 145, 220, 0.2);
+
+    border-radius: 11px;
+
+    padding: 13px 45px 13px 15px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.select-wrapper select:focus {
+    border-color: #687cff;
+}
+
+.select-arrow {
+    position: absolute;
+
+    right: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+
+    color: #9aa7d7;
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+/* ========================================= */
+/* CUSTOM WORDS */
+/* ========================================= */
+
+.custom-box {
+    text-align: left;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: rgba(20, 26, 55, 0.7);
+
+    border: 1px solid rgba(130, 145, 220, 0.15);
+
+    border-radius: 12px;
+}
+
+.custom-box textarea {
+    width: 100%;
+
+    min-height: 100px;
+
+    resize: vertical;
+
+    padding: 12px;
+
+    border-radius: 9px;
+
+    border: 1px solid rgba(130, 145, 220, 0.2);
+
+    background: rgba(5, 7, 19, 0.7);
+
+    color: white;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+}
+
+.small-text {
+    color: #7782aa;
+
+    font-size: 12px;
+
+    margin-top: 8px;
+}
+
+
+/* ========================================= */
+/* PASS SCREEN */
+/* ========================================= */
+
+.status-label {
+    color: #7585c9;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.player-number {
+    font-size: 34px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin: 18px 0;
+}
+
+.warning-box {
+    margin-top: 22px;
+
+    padding: 13px;
+
+    background: rgba(255, 180, 50, 0.08);
+
+    border: 1px solid rgba(255, 190, 70, 0.2);
+
+    border-radius: 10px;
+
+    color: #d4c69f;
+
+    font-size: 12px;
+}
+
+
+/* ========================================= */
+/* ROLE SCREEN */
+/* ========================================= */
+
+.player-label {
+    color: #7782aa;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+.reveal-button {
+    width: 100%;
+
+    padding: 16px;
+
+    margin-top: 25px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(120, 140, 255, 0.35);
+
+    background: rgba(50, 65, 130, 0.35);
+
+    color: white;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.reveal-button:hover {
+    background: rgba(70, 85, 160, 0.5);
+}
+
+.role-card {
+    margin-top: 25px;
+
+    padding: 25px 18px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25, 32, 70, 0.95),
+            rgba(12, 17, 40, 0.95)
+        );
+
+    border: 1px solid rgba(130, 145, 220, 0.2);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.role-icon {
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+#roleText {
+    font-size: 15px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.secret-word {
+    font-size: 34px;
+
+    font-weight: 900;
+
+    margin: 18px 0;
+
+    word-break: break-word;
+}
+
+#roleHint {
+    color: #8993b8;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================= */
+/* IMPOSTER CLUE */
+/* ========================================= */
+
+.clue-label {
+    display: block;
+
+    color: #d8c27a;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.imposter-clue {
+    display: block;
+
+    color: #ffd166;
+
+    font-size: 34px;
+
+    font-weight: 900;
+
+    word-break: break-word;
+
+    text-shadow:
+        0 0 20px rgba(255, 209, 102, 0.2);
+}
+
+
+/* ========================================= */
+/* DISCUSSION */
+/* ========================================= */
+
+.discussion-card {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: rgba(22, 28, 60, 0.8);
+
+    border: 1px solid rgba(130, 145, 220, 0.15);
+}
+
+.discussion-icon {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.discussion-title {
+    font-size: 17px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.discussion-subtitle {
+    margin-top: 7px;
+
+    color: #818cae;
+
+    font-size: 12px;
+}
+
+
+/* ========================================= */
+/* VOTING */
+/* ========================================= */
+
+.vote-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+
+    margin-top: 25px;
+}
+
+.vote-button {
+    width: 100%;
+
+    padding: 14px;
+
+    background: rgba(24, 31, 65, 0.9);
+
+    color: white;
+
+    border: 1px solid rgba(120, 135, 210, 0.2);
+
+    border-radius: 11px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.vote-button:hover {
+    background: rgba(55, 65, 120, 0.9);
+
+    transform: translateY(-1px);
+}
+
+.vote-button:active {
+    transform: scale(0.98);
+}
+
+
+/* ========================================= */
+/* RESULTS */
+/* ========================================= */
+
+.result-icon {
+    font-size: 65px;
+
+    margin-bottom: 12px;
+}
+
+#resultMessage {
+    color: #9ca6c7;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin: 15px 0 25px;
+}
+
+.answer-card {
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: rgba(22, 28, 60, 0.85);
+
+    border: 1px solid rgba(130, 145, 220, 0.15);
+
+    margin-bottom: 15px;
+}
+
+.final-word {
+    margin-top: 9px;
+
+    font-size: 27px;
+
+    font-weight: 900;
+
+    color: #ffffff;
+
+    word-break: break-word;
+}
+
+.imposter-result-card {
+    margin-top: 15px;
+
+    border-color: rgba(255, 77, 90, 0.2);
+}
+
+
+/* ========================================= */
+/* HIDDEN */
+/* ========================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ========================================= */
+/* MOBILE */
+/* ========================================= */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .game {
+        min-height: 100vh;
+    }
+
+    .screen {
+        padding: 40px 18px 25px;
+    }
+
+    .home-button {
+        top: 12px;
+        right: 12px;
+
+        padding: 8px 11px;
+
+        font-size: 11px;
+    }
+
+    .logo {
+        font-size: 38px;
+
+        letter-spacing: 4px;
+    }
+
+    .planet {
+        font-size: 58px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .secret-word,
+    .imposter-clue {
+        font-size: 29px;
+    }
+}
+
+
+@media (max-width: 350px) {
+
+    .screen {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .home-button {
+        font-size: 10px;
+        padding: 7px 9px;
+    }
+}

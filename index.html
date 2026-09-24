@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LAST SIGNAL</title>
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#050713">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="game">
+
+        <!-- HOME BUTTON -->
+        <button id="homeButton" class="home-button">
+            ⌂ HOME
+        </button>
+
+
+        <!-- ========================================= -->
+        <!-- HOME SCREEN -->
+        <!-- ========================================= -->
+
+        <section id="homeScreen" class="screen active">
+
+            <div class="planet">🪐</div>
+
+            <div class="logo">
+                LAST SIGNAL
+            </div>
+
+            <div class="orbit-line"></div>
+
+            <p class="tagline">
+                One crew.<br>
+                One secret.<br>
+                One imposter.
+            </p>
+
+            <button id="startButton" class="primary-button">
+                🚀 START EXPEDITION
+            </button>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- SETUP SCREEN -->
+        <!-- ========================================= -->
+
+        <section id="setupScreen" class="screen">
+
+            <div class="section-icon">
+                🛰️
+            </div>
+
+            <h2>
+                PREPARE YOUR ODYSSEY
+            </h2>
+
+            <p class="screen-subtitle">
+                Configure your crew before launch.
+            </p>
+
+
+            <!-- CREW SIZE -->
+
+            <div class="setting">
+
+                <label for="playerCount">
+                    CREW SIZE
+                </label>
+
+                <div class="select-wrapper">
+
+                    <select id="playerCount">
+
+                        <option value="3">
+                            3 Players
+                        </option>
+
+                        <option value="4">
+                            4 Players
+                        </option>
+
+                        <option value="5" selected>
+                            5 Players
+                        </option>
+
+                        <option value="6">
+                            6 Players
+                        </option>
+
+                        <option value="7">
+                            7 Players
+                        </option>
+
+                        <option value="8">
+                            8 Players
+                        </option>
+
+                        <option value="9">
+                            9 Players
+                        </option>
+
+                        <option value="10">
+                            10 Players
+                        </option>
+
+                    </select>
+
+                    <span class="select-arrow">
+                        ⌄
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- IMPOSTERS -->
+
+            <div class="setting">
+
+                <label for="imposterCount">
+                    IMPOSTERS
+                </label>
+
+                <div class="select-wrapper">
+
+                    <select id="imposterCount">
+
+                        <option value="1" selected>
+                            1 Imposter
+                        </option>
+
+                        <option value="2">
+                            2 Imposters
+                        </option>
+
+                    </select>
+
+                    <span class="select-arrow">
+                        ⌄
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="setting">
+
+                <label for="categorySelect">
+                    EXPEDITION TYPE
+                </label>
+
+                <div class="select-wrapper">
+
+                    <select id="categorySelect">
+
+                        <option value="random">
+                            🌌 Random
+                        </option>
+
+                        <option value="food">
+                            🍕 Food
+                        </option>
+
+                        <option value="animals">
+                            🐺 Animals
+                        </option>
+
+                        <option value="sports">
+                            ⚽ Sports
+                        </option>
+
+                        <option value="places">
+                            🌍 Places
+                        </option>
+
+                        <option value="objects">
+                            🎒 Objects
+                        </option>
+
+                        <option value="games">
+                            🎮 Games
+                        </option>
+
+                        <option value="space">
+                            🚀 Space
+                        </option>
+
+                        <option value="nature">
+                            🌲 Nature
+                        </option>
+
+                        <option value="school">
+                            📚 School
+                        </option>
+
+                        <option value="science">
+                            🔬 Science
+                        </option>
+
+                        <option value="technology">
+                            💻 Technology
+                        </option>
+
+                        <option value="entertainment">
+                            🎬 Entertainment
+                        </option>
+
+                        <option value="everyday">
+                            🏠 Everyday
+                        </option>
+
+                        <option value="custom">
+                            📝 Custom Words
+                        </option>
+
+                    </select>
+
+                    <span class="select-arrow">
+                        ⌄
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- DIFFICULTY -->
+
+            <div class="setting">
+
+                <label for="difficultySelect">
+                    DIFFICULTY
+                </label>
+
+                <div class="select-wrapper">
+
+                    <select id="difficultySelect">
+
+                        <option value="easy">
+                            🟢 Easy
+                        </option>
+
+                        <option value="medium" selected>
+                            🟡 Medium
+                        </option>
+
+                        <option value="hard">
+                            🔴 Hard
+                        </option>
+
+                    </select>
+
+                    <span class="select-arrow">
+                        ⌄
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CUSTOM WORDS -->
+
+            <div id="customWordsBox" class="custom-box hidden">
+
+                <label for="customWords">
+                    CUSTOM WORDS
+                </label>
+
+                <textarea
+                    id="customWords"
+                    placeholder="Enter words separated by commas
+
+Example:
+Pizza, Football, Minecraft, Tiger"
+                ></textarea>
+
+                <p class="small-text">
+                    Add at least 3 words.
+                </p>
+
+            </div>
+
+
+            <button id="beginButton" class="primary-button">
+                🚀 BEGIN EXPEDITION
+            </button>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- PASS SCREEN -->
+        <!-- ========================================= -->
+
+        <section id="passScreen" class="screen">
+
+            <div class="section-icon big-icon">
+                🔄
+            </div>
+
+            <div class="status-label">
+                EXPEDITION BEGINS
+            </div>
+
+            <h2>
+                PASS THE DEVICE
+            </h2>
+
+            <div id="passPlayer" class="player-number">
+                PLAYER 1
+            </div>
+
+            <p>
+                The expedition starts with this player.
+            </p>
+
+            <div class="warning-box">
+                🔒 Keep the screen hidden from everyone else.
+            </div>
+
+            <p class="small-text">
+                Pass the device to the next player.
+            </p>
+
+            <button id="readyButton" class="primary-button">
+                I'M READY
+            </button>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- ROLE SCREEN -->
+        <!-- ========================================= -->
+
+        <section id="roleScreen" class="screen">
+
+            <div class="player-label">
+                PLAYER
+            </div>
+
+            <div id="currentPlayerNumber" class="player-number">
+                1
+            </div>
+
+            <p class="small-text">
+                Make sure nobody else can see.
+            </p>
+
+            <button id="revealButton" class="reveal-button">
+                👁️ REVEAL ROLE
+            </button>
+
+
+            <div id="roleResult" class="role-card hidden">
+
+                <div id="roleIcon" class="role-icon">
+                    👨‍🚀
+                </div>
+
+                <div id="roleText">
+                    CREWMATE
+                </div>
+
+                <div id="wordText" class="secret-word">
+                    SECRET
+                </div>
+
+                <p id="roleHint">
+                    Give a clue without making the word obvious.
+                </p>
+
+            </div>
+
+
+            <button
+                id="nextPlayerButton"
+                class="primary-button hidden"
+            >
+                PASS TO NEXT PLAYER →
+            </button>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- DISCUSSION SCREEN -->
+        <!-- ========================================= -->
+
+        <section id="discussionScreen" class="screen">
+
+            <div class="section-icon big-icon">
+                🌌
+            </div>
+
+            <div class="status-label">
+                ODYSSEY BEGINS
+            </div>
+
+            <h2>
+                THE ROUND STARTS
+            </h2>
+
+            <p>
+                The round starts with<br>
+                <strong>PLAYER 1</strong>
+            </p>
+
+            <div class="discussion-card">
+
+                <div class="discussion-icon">
+                    🗣️
+                </div>
+
+                <div class="discussion-title">
+                    GO CLOCKWISE
+                </div>
+
+                <div class="discussion-subtitle">
+                    Follow the direction around the crew.
+                </div>
+
+            </div>
+
+            <button id="voteButton" class="primary-button">
+                🗳️ START VOTING
+            </button>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- VOTE SCREEN -->
+        <!-- ========================================= -->
+
+        <section id="voteScreen" class="screen">
+
+            <div class="section-icon">
+                🗳️
+            </div>
+
+            <h2>
+                WHO IS THE IMPOSTER?
+            </h2>
+
+            <p class="screen-subtitle">
+                Choose one player.
+            </p>
+
+            <div id="voteButtons" class="vote-list"></div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- RESULT SCREEN -->
+        <!-- ========================================= -->
+
+        <section id="resultScreen" class="screen">
+
+            <div id="resultIcon" class="result-icon">
+                🎉
+            </div>
+
+            <h2 id="resultTitle">
+                IMPOSTER CAUGHT
+            </h2>
+
+            <p id="resultMessage"></p>
+
+
+            <!-- SECRET WORD -->
+
+            <div class="answer-card">
+
+                <div class="status-label">
+                    SECRET WORD
+                </div>
+
+                <div id="finalWord" class="final-word">
+                    Pizza
+                </div>
+
+            </div>
+
+
+            <button
+                id="playAgainButton"
+                class="primary-button"
+            >
+                🚀 NEW EXPEDITION
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+    <script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("./service-worker.js")
+                .then(() => {
+                    console.log("VOIDBOUND is ready for offline play 🚀");
+                })
+                .catch(error => {
+                    console.error("Service worker registration failed:", error);
+                });
+        });
+    }
+</script>
+
+</body>
+</html>
