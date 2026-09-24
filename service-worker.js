@@ -1,4 +1,4 @@
-const CACHE_NAME = "LAST SIGNAL";
+const CACHE_NAME = "LAST SIGNAL.v2";
 
 const FILES_TO_CACHE = [
     "./",
